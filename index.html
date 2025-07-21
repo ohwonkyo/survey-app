@@ -1,0 +1,34 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <title>설문조사</title>
+</head>
+<body>
+  <h1>당신의 의견을 들려주세요!</h1>
+  <form id="survey-form">
+    <label>가장 좋아하는 색상은?<br />
+      <input type="text" name="color" required />
+    </label><br />
+    <label>하루에 커피 몇 잔 마시나요?<br />
+      <input type="number" name="coffee" required />
+    </label><br />
+    <button type="submit">제출</button>
+  </form>
+
+  <div id="result"></div>
+
+  <script>
+    const form = document.getElementById('survey-form');
+    const result = document.getElementById('result');
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      const data = new FormData(form);
+      result.innerHTML = `<p>답변 감사합니다!<br>색상: ${data.get('color')}<br>커피: ${data.get('coffee')}잔</p>`;
+      form.reset();
+    });
+  </script>
+</body>
+</html>
