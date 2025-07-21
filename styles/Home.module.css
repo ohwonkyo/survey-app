@@ -1,0 +1,23 @@
+.container {
+  display: flex;
+  height: 100vh;
+}
+
+.sidebar {
+  width: 200px;
+  border-right: 1px solid #ccc;
+  padding: 1rem;
+}
+
+.canvas {
+  flex: 1;
+  padding: 1rem;
+  overflow-y: auto;
+}
+
+.question {
+  border: 1px solid #ddd;
+  padding: 0.5rem;
+  margin-bottom: 0.5rem;
+  background: #fafafa;
+}
